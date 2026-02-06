@@ -1,81 +1,89 @@
+/* --- 1. IMPORT FONTS AT THE TOP --- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@700&display=swap');
+
+/* --- 2. MAIN STYLES --- */
 body {
-    font-family: 'Allura', cursive; /* Change to a romantic cursive font */
+    /* 'Great Vibes' is very elegant and romantic */
+    font-family: 'Great Vibes', cursive; 
     background-color: #ffdde1;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
     margin: 0;
-    background: url('images/image.jpg') repeat;
+    /* Ensure you have a fallback if image fails */
+    background: url('images/image.jpg') repeat, #ffdde1; 
     font-size: 35px;
     color: rgb(255, 0, 174);
-}
-.hh{
-    -webkit-text-stroke: 2px #71004f;
-    font-weight:900;
-
-}
-.pp{
-    -webkit-text-stroke: 2px #71004f;
-
-    font-size: 50px;
-    font-style: oblique;
-    font-weight: 800;
+    overflow: hidden; /* Prevents scrollbars if items move too far */
 }
 
-body
+.hh {
+    -webkit-text-stroke: 1px #71004f; /* Thinner stroke looks cleaner on script fonts */
+    font-weight: 400; /* Script fonts often don't need 900 weight */
+}
+
+.pp {
+    -webkit-text-stroke: 1px #71004f;
+    font-size: 60px; /* Cursive often needs to be slightly larger */
+    font-weight: 400; 
+    margin-top: 10px;
+}
+
+/* Fixed syntax error: Removed the stray 'body' text here */
 
 .container {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column; /* Stack text and buttons */
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.image{
+.image {
     height: 280px;
-    
+    object-fit: cover; /* Keeps image aspect ratio nice */
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px; /* Adds space between buttons */
 }
 
 .buttons button {
     background-color: #ff4d79;
     color: #fff;
-    padding: 10px 30px;
+    padding: 12px 35px;
     border: none;
-    border-radius: 10px;
-    margin: 10px;
-    font-size: 26px;
+    border-radius: 50px; /* Rounded pill shape looks more romantic */
+    font-size: 28px;
     cursor: pointer;
     position: relative;
-    font-family: 'Allura', cursive; /* Change to a romantic cursive font */
-
+    /* Swapped Lobster for Dancing Script - softer and sweeter */
+    font-family: 'Dancing Script', cursive; 
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 15px rgba(255, 77, 121, 0.4); /* Soft glow */
 }
 
 .buttons button:hover {
     background-color: #7c1f37;
-
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-#no-button{
-    
+    transform: scale(1.05); /* Slight pop when hovering */
 }
 
 .hidden-message {
     display: none;
     margin-top: 20px;
+    font-family: 'Parisienne', cursive; /* A different font for the secret note */
+    font-size: 40px;
 }
 
+/* --- ANIMATIONS --- */
 .move {
     animation: moveNoMessage 0.5s linear;
 }
