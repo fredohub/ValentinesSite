@@ -4,43 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Proposal</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <title>Valentine's Proposal</title>
 </head>
 
 <body>
     <div class="container">
         <div class="Mainprompt">
-            <!-- Romantic Image -->
-            <img class="image" src="images/catflower.jpg" alt="Cat with flowers">
-
-            <!-- Headings -->
+            <img class="image" src="images/catflower.jpg"></img>
             <h1 class="hh" id="name">Hey Lizzie!</h1>
             <p class="pp" id="question">Will you be my Valentine?</p>
-
-            <!-- Buttons -->
             <div class="buttons">
-                <button id="no-button" onclick="showMessage('No')">No 💔</button>
-                <button id="yesButton" onclick="showMessage('Yes')">Yes ❤️</button>
+                <button id="no-button" onclick="showMessage('No')">No</button>
+                <button onclick="showMessage('Yes')" id="yesButton">Yes</button>
             </div>
-
-            <!-- Hidden Messages -->
             <div class="hidden-message" id="no-message">
-                <p>Nice try, but you can't escape that easily! 😘</p>
+                <p>Nice try, but you can't escape that easily!</p>
             </div>
             <div class="hidden-message" id="yes-message">
-                <p>YAY! See you on the 14th, babygirl 💖</p>
+                <p>YAY! See you on the 14th, babygirl.</p>
             </div>
         </div>
     </div>
-
-    <!-- Script -->
     <script src="script.js"></script>
 </body>
 
-</html>
+</html> 
