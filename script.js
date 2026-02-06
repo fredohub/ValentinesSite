@@ -29,7 +29,7 @@ function showMessage(response) {
     noButton.style.top = randomY + "px";
 
     // Update question text and hide name
-    question.textContent = "The 'No' button is just for fun 😉";
+    question.textContent = "You can't escape me that easily😉";
     nameHeading.style.display = "none";
   }
 
