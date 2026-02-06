@@ -39,7 +39,7 @@ function showMessage(response) {
     noButton.remove();
 
     // Update question text
-    question.textContent = "YAY! See you on the 14th, babygirl 💖";
+    question.textContent = "YAY! See you on the 14th💖";
     question.style.display = "block";
     question.style.fontStyle = "normal";
 
