@@ -1,45 +1,52 @@
 function showMessage(response) {
+  const container = document.querySelector(".container");
+  const image = document.querySelector(".image");
+  const question = document.getElementById("question");
+  const nameHeading = document.getElementById("name");
+  const noButton = document.getElementById("no-button");
+  const yesButton = document.getElementById("yesButton");
+
   if (response === "No") {
-    const noButton = document.getElementById("no-button");
-    const container = document.querySelector(".container");
-    const maxWidth = window.innerWidth - noButton.offsetWidth;
-    const maxHeight = window.innerHeight - noButton.offsetHeight;
+    // Ensure the container is relative so button moves inside it
+    container.style.position = "relative";
 
     // Set button position to absolute
     noButton.style.position = "absolute";
 
-    // Change image source to "gun.gif"
-    document.getElementsByClassName("image")[0].src = "images/gun.gif";
+    // Change image to gun.gif
+    image.src = "images/gun.gif";
 
-    // Generate random coordinates within the visible container
-    const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
-    const randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+    // Calculate max coordinates inside container
+    const maxWidth = container.clientWidth - noButton.offsetWidth;
+    const maxHeight = container.clientHeight - noButton.offsetHeight;
 
-    // Apply new coordinates to the button
+    // Generate random coordinates
+    const randomX = Math.floor(Math.random() * maxWidth);
+    const randomY = Math.floor(Math.random() * maxHeight);
+
+    // Move the button
     noButton.style.left = randomX + "px";
     noButton.style.top = randomY + "px";
 
-    // Update text content and hide name message
-    document.getElementById("question").textContent =
-      "The no button is just for visuals";
-    document.getElementById("name").style.display = "none";
-
-    // Optional: You can also add a timeout to reset the position after a few seconds
+    // Update question text and hide name
+    question.textContent = "The 'No' button is just for fun 😉";
+    nameHeading.style.display = "none";
   }
 
   if (response === "Yes") {
-    // Remove name message and no button
-    document.getElementById("name").remove();
-    document.getElementById("no-button").remove();
+    // Remove name heading and no button
+    nameHeading.remove();
+    noButton.remove();
 
-    // Update text content, show message, and change image source to "dance.gif"
-    const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "LESGOOO see you on the 14th babygirl😘😘";
-    yesMessage.style.display = "block";
-    yesMessage.style.fontStyle = "normal";
-    document.getElementsByClassName("image")[0].src = "images/dance.gif";
+    // Update question text
+    question.textContent = "YAY! See you on the 14th, babygirl 💖";
+    question.style.display = "block";
+    question.style.fontStyle = "normal";
+
+    // Change image to dance.gif
+    image.src = "images/dance.gif";
 
     // Remove yes button
-    document.getElementById("yesButton").remove();
+    yesButton.remove();
   }
 }
