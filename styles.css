@@ -1,38 +1,65 @@
 /* ---------- BODY ---------- */
 body {
-    font-family: 'Dancing Script', cursive; /* Elegant body font */
+    font-family: 'Lora', serif; /* Modern elegant body font */
     font-size: 35px;
     color: rgb(255, 0, 174);
 
+    /* Original background */
     background-color: #ffdde1;
-    background-image: url('images/catflower.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url('images/image.jpg');
+    background-repeat: repeat; /* restore old repeat */
+    background-size: auto;
+    background-position: top left;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
 /* ---------- HEADINGS ---------- */
-.hh, .pp {
+.hh {
     -webkit-text-stroke: 2px #71004f;
     font-weight: 900;
-    font-family: 'Great Vibes', cursive; /* Elegant & flowing headings */
-    margin: 10px 0;
+    font-family: 'Playfair Display', serif; /* Modern elegant headings */
 }
 
 .pp {
+    -webkit-text-stroke: 2px #71004f;
     font-size: 50px;
     font-style: oblique;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif; /* Modern elegant headings */
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative; /* required for moving "No" button */
+}
+
+/* ---------- IMAGE ---------- */
+.image {
+    height: 280px;
+    width: auto;
 }
 
 /* ---------- BUTTONS ---------- */
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
 .buttons button {
     background-color: #ff4d79;
     color: #fff;
@@ -43,7 +70,7 @@ body {
     font-size: 26px;
     cursor: pointer;
     position: relative;
-    font-family: 'Parisienne', cursive; /* Romantic & elegant buttons */
+    font-family: 'Playfair Display', serif; /* Elegant button font */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -52,39 +79,13 @@ body {
     transform: scale(1.05);
 }
 
-/* ---------- IMAGE ---------- */
-.image {
-    height: 280px;
-    width: auto;
-    border-radius: 10px;
-    margin: 15px;
+/* ---------- NO BUTTON SMOOTH MOVE ---------- */
+#no-button {
+    transition: left 0.3s ease, top 0.3s ease;
 }
 
 /* ---------- HIDDEN MESSAGE ---------- */
 .hidden-message {
     display: none;
     margin-top: 20px;
-    font-size: 28px;
-}
-
-/* ---------- NO BUTTON SMOOTH MOVE ---------- */
-#no-button {
-    transition: left 0.3s ease, top 0.3s ease;
-}
-
-/* ---------- CONTAINER ---------- */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    position: relative; /* required for "No" button movement */
 }
